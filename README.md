@@ -15,7 +15,8 @@ _Wondering why we humans were in dire need of FFT even though DFT existed to do 
 * A fast Fourier transform can be used to solve various types of equations, or show various types of frequency activity in useful ways.  
 * For example, fast Fourier transform might be helpful in sound engineering, seismology or in voltage measurements.  
 
-> <img src="DFT vs. FFT.jpg" width="400" height="250" >
+> <img src="images/DFT vs. FFT.jpg" width="400" height="250" >
+
 For a sample set of 1024 values, the FFT is 102.4 times faster than the discrete Fourier transform (DFT). The basis for this remarkable speed advantage is the _bit-reversal scheme of the CooleyTukey algorithm._
 
 **Note:** These are just a few important aspects of FFT, there is a lot more out there than this. 
@@ -24,28 +25,28 @@ For a sample set of 1024 values, the FFT is 102.4 times faster than the discrete
 
 Four sinusoidal signals with different frequencies were used to do this project as shown in figure (though the frequencies aren't clear). You'll find the hidden frequencies shortly.
 
-> <img src="AllSignals.jpg" width="400" height="250" >
+> <img src="images/AllSignals.jpg" width="400" height="250" >
 
 A noisy signal was generated using MATLAB rand command which was added to all the signals. The four signals along with noise were added to generate a single signal with different frequency components, have a look (not clear either!)
 
-> <img src="OverallSignal.jpg" width="400" height="250" >
+> <img src="images/OverallSignal.jpg" width="400" height="250" >
 
 The FFT of this signal was computed using the fft() function and the frequency spectrum was plotted to visualize the frequency components. Now you clearly see the frequency components along with the noise. 
 
-> <img src="FreqResponseOriginalSignal.jpg" width="400" height="250" >
+> <img src="images/FreqResponseOriginalSignal.jpg" width="400" height="250" >
 
 Next, a BPF was generated using the Filter Designer Toolbox and desired parameters were set which looked something like this, see the Magnitude Spectrum? Interesting, isn't it? You can change the parameters as you like to get the desired outcome. I wanted to remove the noise and retain the frequencies which I initially created my signal with. Thus the parameters. 
 
-> <img src="BPF_Toolbox.png" width="400" height="250" >
+> <img src="images/BPF_Toolbox.png" width="400" height="250" >
 
 Thus designed filter was exported to the workspace as an object,  this filter was applied to the actual signal and corresponding FFT was computed to check for the frequency components retained. 
 
-> <img src="FreqResponseAfterPassingBPF.jpg" width="400" height="250" >
+> <img src="images/FreqResponseAfterPassingBPF.jpg" width="400" height="250" >
  
 I did this with both LPF and BPF just to get the hang of it, you can do as many modifications and as much processing as you like and have fun with the toolbox. The possibilities are wide. 
 
 Here's an image comparing all the signals generated in the process.
 
-> <img src="ComparisonOfAllSignals.jpg" width="500" height="350" >
+> <img src="images/ComparisonOfAllSignals.jpg" width="500" height="350" >
 
-## Thank you for reading! Hope it helped :)
+## Thank you for reading! Hoping it helped :)
